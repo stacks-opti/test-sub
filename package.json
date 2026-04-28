@@ -1,0 +1,41 @@
+{
+  "name": "fivem-optimizer",
+  "version": "2.0.5",
+  "description": "FiveM Optimizer Pro desktop app",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^27.3.11",
+    "electron-builder": "^24.13.3",
+    "javascript-obfuscator": "^5.4.2"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "build": {
+    "appId": "com.fivemoptimizer.app",
+    "productName": "FiveM Optimizer",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://github.com/stacks-opti/test-sub/releases/latest/download/"
+      }
+    ],
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}
